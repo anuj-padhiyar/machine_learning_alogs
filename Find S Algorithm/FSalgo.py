@@ -16,4 +16,4 @@ with open('test2.csv') as csvDataFile:
     if "hypothesis" not in locals():
         print("No Data Availble")
     else:
-        print(hypothesis)
+        print("Hypothesis Is ",hypothesis)
