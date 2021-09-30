@@ -1,20 +1,21 @@
 import csv
 
-with open('test2.csv') as csvDataFile:
+with open('test1.csv') as csvDataFile:
     csvReader = csv.reader(csvDataFile)
     table = list(csvReader)
     header = table.pop(0)
 
+hypothesis = []
 for row in table:
     if row.pop(-1)=="yes":
-        if "hypothesis" in locals():
+        if len(hypothesis) != 0:
             for i in range(len(row)):
                 if hypothesis[i] != row[i]:
                     hypothesis[i] = '?'
         else:
             hypothesis = row.copy()
 
-if "hypothesis" not in locals():
+if len(hypothesis) == 0:
     print("No Data Availble")
 else:
     print("Hypothesis Is ",hypothesis)
